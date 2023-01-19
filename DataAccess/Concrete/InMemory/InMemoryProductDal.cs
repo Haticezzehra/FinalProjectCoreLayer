@@ -46,8 +46,11 @@ namespace DataAccess.Concrete.InMemory
                  }
              }*/
             //LINQ Kullanımı
-            Product productToDelete = null;
-            productToDelete = products.SingleOrDefault();
+
+
+            Product productToDelete = products.SingleOrDefault(p=>p.ProductId==product.ProductId);
+            //SingleOrDefault products listemizi tek tek dolaşmamızı sağlıyo.Tek bir şey aradığımızda bunu kullanırız.
+            //FirstOrDefault//First de kullansak olur 
             products.Remove(productToDelete);
 
         }
@@ -58,9 +61,22 @@ namespace DataAccess.Concrete.InMemory
             return products;
         }
 
+
+
         public void Update(Product product)
         {
-            throw new NotImplementedException();
+            Product productToUpdate = products.SingleOrDefault(p => p.ProductId == product.ProductId);
+            productToUpdate.ProductName = product.ProductName;
+            productToUpdate.CategoryId = product.CategoryId;
+            productToUpdate.UnitPrice = product.UnitPrice;
+            productToUpdate.UnitsInStock = product.UnitsInStock;
+
+        }
+        public List<Product> GetAllByCategory(int categoryId)
+        {
+            //LINQ ile burada where koşulunu uyguladık.
+           return products.Where(p=>p.CategoryId==categoryId).ToList();
+
         }
     }
 }
