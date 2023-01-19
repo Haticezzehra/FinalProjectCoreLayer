@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using System.Linq;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -11,7 +12,7 @@ namespace DataAccess.Concrete.InMemory
             products = new List<Product>
             {
                 new Product{
-                    ProductId = 1,CategoryId= 1 ,ProductName="Bardak",UnitPrice =15,UnitsInStock=15 
+                    ProductId = 1,CategoryId= 1 ,ProductName="Bardak",UnitPrice =15,UnitsInStock=15
                 },
                   new Product{
                     ProductId = 2,CategoryId= 1 ,ProductName="Kamera",UnitPrice =500,UnitsInStock=1
@@ -31,17 +32,30 @@ namespace DataAccess.Concrete.InMemory
         }
         public void Add(Product product)
         {
-            throw new NotImplementedException();
+            products.Add(product);
         }
-
+        //LINQ= Language Integrated Query//Dile gömülü sorgulama
         public void Delete(Product product)
         {
-            throw new NotImplementedException();
+            //LINQ Olmadan Kullanım.
+            /* foreach (Product p in products)
+             {
+                 if (p.ProductId == product.ProductId)
+                 {
+                     products.Remove(p);
+                 }
+             }*/
+            //LINQ Kullanımı
+            Product productToDelete = null;
+            productToDelete = products.SingleOrDefault();
+            products.Remove(productToDelete);
+
         }
 
         public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+
+            return products;
         }
 
         public void Update(Product product)
