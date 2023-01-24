@@ -19,6 +19,7 @@ namespace Core.DataAccess
         void Add(T  entity);
         void Update(T entity);
         void Delete(T entity);
-        List<Product> GetAllByCategory(int categoryId);//Ürünleri kategorisine göre listele
+        
+
     }
 }

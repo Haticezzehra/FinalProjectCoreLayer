@@ -1,4 +1,5 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Category: IEntity //diğer paketlerdende erişilebilsin diye public yaptık defaulttda internal erişim belirleyicisi
+    public class Category : IEntity //diğer paketlerdende erişilebilsin diye public yaptık defaulttda internal erişim belirleyicisi
     {
-        public int CategoryId { get; set; } 
+        public int CategoryId { get; set; }
 
         public string CategoryName { get; set; }
     }
