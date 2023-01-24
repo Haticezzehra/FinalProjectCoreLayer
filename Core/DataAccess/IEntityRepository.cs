@@ -1,5 +1,5 @@
-﻿using Entities.Abstract;
-using Entities.Concrete;
+﻿
+using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
-{//generic constraint 
+namespace Core.DataAccess
+{//generic constraint   
     //class referanse tip
     //IEntity IEntity
     // new()=> Newlenebilir olması gerektiği kısıtını ekliyo
