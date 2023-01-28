@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Core.DataAccess.EntityFramework
 { //Bir entity tipi ve bir context tipi yazmamızı istiyor
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
-   where TEntity : class, Entities.TEntity, new()
+   where TEntity : class, Entities.IEntity, new()
 where TContext : DbContext, new()
 
     {

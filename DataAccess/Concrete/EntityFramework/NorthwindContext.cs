@@ -21,5 +21,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Product> Products { get; set; } //Veritabanında hangi tablo hangi nesneye denk geliyo böyle belirliyoruz.
         public DbSet<Category> Categories{ get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }
