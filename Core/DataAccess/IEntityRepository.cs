@@ -12,7 +12,7 @@ namespace Core.DataAccess
     //class referanse tip
     //IEntity IEntity
     // new()=> Newlenebilir olması gerektiği kısıtını ekliyo
-    public interface IEntityRepository<T> where T:class, IEntity, new()
+    public interface IEntityRepository<T> where T:class, TEntity, new()
     {
         List<T> GetAll(Expression<Func<T,bool>> filter=null);//Bize LINQ ile gelen bi özellik. Buraya filtre yazabilmemizi sağlıyo.
         T Get(Expression<Func<T, bool>> filter = null);
