@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Category : TEntity //diğer paketlerdende erişilebilsin diye public yaptık defaulttda internal erişim belirleyicisi
+    public class Category : IEntity //diğer paketlerdende erişilebilsin diye public yaptık defaulttda internal erişim belirleyicisi
     {
         public int CategoryId { get; set; }
 
