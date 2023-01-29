@@ -8,8 +8,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            // ProductTest();
-            CategoryTest();
+           ProductTest();
+           // CategoryTest();
 
         }
 
@@ -29,6 +29,11 @@ namespace ConsoleUI
             {
                 Console.WriteLine(product.ProductName);
             }
+            foreach (var product in productManager.GetProductDetails())
+            {
+                Console.WriteLine(product.ProductName +"*-*"+product.CategoryName);
+            }
+
         }
     }
 }
