@@ -10,8 +10,8 @@ namespace DataAccess.Concrete.EntityFramework
 {
     //Context: db tabloları ile proje claslarını bağlamak.
     //Böylece sınıfımıza sen bir db contexin demiş olduk.
-    public class NorthwindContext:DbContext //EntityFrameworkden gelen bir class.
-    { 
+    public class NorthwindContext : DbContext //EntityFrameworkden gelen bir class.
+    {
         //Projemiz hangi veritabanı ile ilişkili olduğunu belirttiğimiz yer
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,7 +19,7 @@ namespace DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Product> Products { get; set; } //Veritabanında hangi tablo hangi nesneye denk geliyo böyle belirliyoruz.
-        public DbSet<Category> Categories{ get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
     }
